@@ -23,6 +23,9 @@ export const GlobalStyles = css`
     text-decoration: none;
     color: ${defaultColor};
   }
+  input {
+    margin: 0;
+  }
 `;
 
 export const PageTitle = styled.h2`

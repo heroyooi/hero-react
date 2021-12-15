@@ -5,9 +5,9 @@ import { CheckboxWrapper } from './styles';
 const CheckboxGroup = ({ data, onChange }) => {
   return (
     <CheckboxWrapper>
-      {data.map((checkbox, index) => {
-        return <Checkbox checked={checkbox.checked} id={checkbox.id} label={checkbox.label} onChange={onChange} />;
-      })}
+      {data.map((checkbox, index) => (
+        <Checkbox checked={checkbox.checked} id={checkbox.id} label={checkbox.label} onChange={onChange} />
+      ))}
     </CheckboxWrapper>
   );
 };

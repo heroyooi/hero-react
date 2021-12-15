@@ -25,12 +25,13 @@ npm run dev
 npm i react-router-dom @loadable/component
 npm i @emotion/styled @emotion/react emotion-reset
 npm i immer
+npm i uuid
 ```
 
 #### NPM - Storybook
 
 ```command
-npx sb init
+npx -p @storybook/cli sb init
 npm i -D @storybook/addon-knobs @storybook/theming @storybook/addon-docs
 npm run storybook
 ```
