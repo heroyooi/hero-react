@@ -32,11 +32,10 @@ npm i uuid
 
 ```command
 npx sb init
-npm i -D @storybook/addon-knobs @storybook/theming @storybook/addon-docs
 npm run storybook
 ```
 
-### 이슈
+### jsStorybook Issue
 
 - eslint 에러로 인하여 설정 변경
 

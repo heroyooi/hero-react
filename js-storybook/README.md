@@ -20,6 +20,7 @@ npm run dev
 ```command
 npm i react-router-dom @loadable/component
 npm i @emotion/styled @emotion/react emotion-reset
+npm i prop-types
 ```
 
 #### NPM - Storybook

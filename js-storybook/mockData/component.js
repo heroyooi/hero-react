@@ -2,12 +2,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 const datas = {};
 
-datas.checkbox = { id: 'checkbox-1', label: '체크박스 1', checked: false };
+datas.checkbox = { id: 'checkbox-1', label: '체크박스 1', checked: false, disabled: false };
 datas.checkboxGroup = () => [
-  { id: uuidv4(), label: '체크박스 그룹 1', checked: false },
-  { id: uuidv4(), label: '체크박스 그룹 2', checked: false },
-  { id: uuidv4(), label: '체크박스 그룹 3', checked: false },
-  { id: uuidv4(), label: '체크박스 그룹 4', checked: false },
+  { id: uuidv4(), label: '체크박스 그룹 1', checked: false, disabled: false },
+  { id: uuidv4(), label: '체크박스 그룹 2', checked: false, disabled: false },
+  { id: uuidv4(), label: '체크박스 그룹 3', checked: false, disabled: false },
+  { id: uuidv4(), label: '체크박스 그룹 4', checked: false, disabled: false },
 ];
 
 datas.radio = { id: 'radio-1', label: '라디오 1', checked: false };
