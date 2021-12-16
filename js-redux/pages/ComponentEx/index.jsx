@@ -10,7 +10,7 @@ import { CSection, CTitle } from './styles';
 import mockDatas from '@mockData/component';
 
 const ComponentEx = () => {
-  const { checkbox, radio, checkboxGroup, radioGroup } = mockDatas;
+  const { checkbox, checkboxGroup, radio, radioGroup } = mockDatas;
 
   // 단일 체크박스
   const [checkboxItem, setCheckboxItem] = useState(checkbox);

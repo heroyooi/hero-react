@@ -1,18 +1,18 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 import utils from '@utils';
-import * as api from '@store/api/posts';
+import * as api from '@store/api/post';
 
 const initialState = {
-  posts: [],
-  postsLoading: false,
-  postsDone: false,
-  postsError: null,
-
   post: null,
   postLoading: false,
   postDone: false,
   postError: null,
+
+  posts: [],
+  postsLoading: false,
+  postsDone: false,
+  postsError: null,
 };
 
 const GET_POSTS = 'GET_POSTS';

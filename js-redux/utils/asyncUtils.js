@@ -9,6 +9,7 @@ utils.createPromiseThunk = (type, promiseCreator) => {
       const payload = await promiseCreator(param);
       dispatch({ type: SUCCESS, payload });
     } catch (e) {
+      console.error(e);
       dispatch({ type: FAILURE, payload: e, error: true });
     }
   };

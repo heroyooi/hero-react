@@ -11,7 +11,7 @@ const CheckboxGroup = ({ data, onChange }) => {
           checked={checkbox.checked}
           id={checkbox.id}
           label={checkbox.label}
-          disabled={radio.disabled}
+          disabled={checkbox.disabled}
           onChange={onChange}
         />
       ))}
