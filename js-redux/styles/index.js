@@ -10,6 +10,7 @@ export const GlobalStyles = css`
   ${emotionReset}
   body, input, select, textarea, button {
     font-family: 'Pretendard';
+    color: ${defaultColor};
   }
   *,
   *::after,
@@ -26,6 +27,15 @@ export const GlobalStyles = css`
   input {
     margin: 0;
   }
+`;
+
+export const BaseBox = `
+  position: relative;
+  min-height: 150px;
+  padding: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
 `;
 
 export const PageTitle = styled.h2`

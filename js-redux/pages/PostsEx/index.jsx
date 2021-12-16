@@ -21,12 +21,12 @@ const Posts = () => {
 
   return (
     <MainLayout>
-      {!post ? (
+      {!post.data ? (
         <Loading text="LOADING" />
       ) : (
         <>
-          <PageTitle>{post?.title}</PageTitle>
-          <Description>{post.desc}</Description>
+          <PageTitle>{post.data.title}</PageTitle>
+          <Description>{post.data.desc}</Description>
         </>
       )}
     </MainLayout>

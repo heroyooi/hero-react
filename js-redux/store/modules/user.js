@@ -1,43 +1,34 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
-import utils from '@utils';
+import { createPromiseThunk, reducerUtils } from '@utils/asyncUtils';
 import * as api from '@store/api/user';
 
 const initialState = {
-  meLoading: false,
-  meDone: false,
-  meError: false,
-  me: null,
+  me: reducerUtils.initial(),
 };
 
 const GET_ME = 'GET_ME';
 const GET_ME_PENDING = 'GET_ME_PENDING';
 const GET_ME_SUCCESS = 'GET_ME_SUCCESS';
-const GET_ME_FAILURE = 'GET_ME_FAILURE';
+const GET_ME_ERROR = 'GET_ME_ERROR';
 
-export const getMe = utils.createPromiseThunk(GET_ME, api.getMe);
+export const getMe = createPromiseThunk(GET_ME, api.getMe);
 
 export default handleActions(
   {
     [GET_ME_PENDING]: (state, action) => {
       return produce(state, (draft) => {
-        draft.meLoading = true;
-        draft.meDone = false;
-        draft.meError = null;
+        draft.me = reducerUtils.loading();
       });
     },
     [GET_ME_SUCCESS]: (state, action) => {
       return produce(state, (draft) => {
-        draft.meLoading = false;
-        draft.meDone = true;
-        draft.me = action.payload;
+        draft.me = reducerUtils.success(action.payload);
       });
     },
-    [GET_ME_FAILURE]: (state, action) => {
+    [GET_ME_ERROR]: (state, action) => {
       return produce(state, (draft) => {
-        draft.meLoading = false;
-        draft.meDone = false;
-        draft.meError = action.payload;
+        draft.me = reducerUtils.error(action.error);
       });
     },
   },

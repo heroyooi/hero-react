@@ -23,24 +23,24 @@ const Home = () => {
       <PageTitle>비동기 통신 예제</PageTitle>
       <SubTitle marginTop={30}>로그인 정보</SubTitle>
       <UserBox>
-        {!me ? (
+        {!me.data ? (
           <Loading text="LOADING ME" />
         ) : (
           <ul>
-            <li>이름: {me.name}</li>
-            <li>나이: {me.age}</li>
-            <li>이메일: {me.email}</li>
+            <li>이름: {me.data.name}</li>
+            <li>나이: {me.data.age}</li>
+            <li>이메일: {me.data.email}</li>
           </ul>
         )}
       </UserBox>
 
       <SubTitle marginTop={30}>게시글</SubTitle>
       <PostWrap>
-        {!posts.length ? (
+        {!posts.data ? (
           <Loading text="LOADING POSTS" />
         ) : (
           <ul>
-            {posts.map((post, index) => (
+            {posts.data.map((post, index) => (
               <li key={index}>
                 <Link to={`/posts/${post.id}`}>- {post.title}</Link>
               </li>

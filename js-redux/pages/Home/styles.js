@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { PrimaryColor } from '@styles';
 
 export const BaseBox = `
   position: relative;
@@ -25,6 +26,9 @@ export const PostWrap = styled.div`
     margin-top: 10px;
     &:first-of-type {
       margin-top: 0;
+    }
+    a:hover {
+      color: ${PrimaryColor};
     }
   }
 `;
