@@ -31,7 +31,7 @@ npm i uuid
 #### NPM - Storybook
 
 ```command
-npx -p @storybook/cli sb init
+npx sb init
 npm i -D @storybook/addon-knobs @storybook/theming @storybook/addon-docs
 npm run storybook
 ```
@@ -56,7 +56,7 @@ npm run storybook
 ```
 
 - 스토리북 빌드 중 에러 발생, UnhandledPromiseRejectionWarning: TypeError: compilation.getAssetPath is not a function
-- 웹팩 버전으로 인하여 생기는 문제
+- 웹팩 5버전으로 인하여 생기는 문제임을 알게 되어서 아래 패키지를 설치
 
 ```command
 npm i -D html-webpack-plugin
