@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import MainLayout from '@layouts/MainLayout';
-import Loading from '@components/Loading';
-import { PageTitle, SubTitle } from '@styles';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import MainLayout from '@layouts/MainLayout';
+import Loading from '@components/Loading';
+import CommentsContainer from '@containers/Comments';
+import { PageTitle, SubTitle } from '@styles';
 import * as userActions from '@store/modules/user';
 import * as postActions from '@store/modules/post';
-import { UserBox, PostWrap, PostCard } from './styles';
+import { UserBox, PostWrap } from './styles';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -48,6 +49,10 @@ const Home = () => {
           </ul>
         )}
       </PostWrap>
+
+      <SubTitle marginTop={30}>댓글</SubTitle>
+      <CommentsContainer />
+
       <SubTitle marginTop={30}>코딩맵</SubTitle>
       <ul>
         <li>

@@ -15,6 +15,7 @@ const config = {
       '@components': path.resolve(__dirname, 'components'),
       '@layouts': path.resolve(__dirname, 'layouts'),
       '@pages': path.resolve(__dirname, 'pages'),
+      '@containers': path.resolve(__dirname, 'containers'),
       '@store': path.resolve(__dirname, 'store'),
       '@utils': path.resolve(__dirname, 'utils'),
       '@styles': path.resolve(__dirname, 'styles'),

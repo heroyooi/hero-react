@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const PrimaryColor = '#6e57ee';
-export const defaultColor = '#000';
+export const defaultColor = '#000000';
 
 export const GlobalStyles = css`
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
@@ -27,11 +27,19 @@ export const GlobalStyles = css`
   input {
     margin: 0;
   }
+  textarea {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    resize: none;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+  }
 `;
 
 export const BaseBox = `
   position: relative;
-  min-height: 150px;
+  min-height: 120px;
   padding: 15px;
   border-radius: 10px;
   overflow: hidden;

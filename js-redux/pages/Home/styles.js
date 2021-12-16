@@ -1,14 +1,5 @@
 import styled from '@emotion/styled';
-import { PrimaryColor } from '@styles';
-
-export const BaseBox = `
-  position: relative;
-  min-height: 150px;
-  padding: 15px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
-`;
+import { BaseBox, PrimaryColor } from '@styles';
 
 export const UserBox = styled.div`
   ${BaseBox}

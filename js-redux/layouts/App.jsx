@@ -6,7 +6,7 @@ import { GlobalStyles } from '@styles';
 
 const Home = loadable(() => import('@pages/Home'));
 const ComponentEx = loadable(() => import('@pages/ComponentEx'));
-const PostsEx = loadable(() => import('@pages/PostsEx'));
+const Posts = loadable(() => import('@pages/Posts'));
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/components" component={ComponentEx} />
-        <Route path="/posts/:postId" component={PostsEx} />
+        <Route path="/posts/:postId" component={Posts} />
       </Switch>
     </>
   );
