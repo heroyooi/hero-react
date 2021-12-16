@@ -34,6 +34,7 @@ const Comments = () => {
 
   useEffect(() => {
     console.log('comments ::: ', comments);
+    setTextareaValue('');
   }, [comments]);
 
   return (

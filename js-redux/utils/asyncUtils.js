@@ -1,9 +1,9 @@
 // Promise에 기반한 Thunk를 만들어주는 함수
 export const createPromiseThunk = (type, promiseCreator) => {
-  const [SUCCESS, ERROR] = [`${type}_SUCCESS`, `${type}_ERROR`];
+  const [PENDING, SUCCESS, ERROR] = [`${type}_PENDING`, `${type}_SUCCESS`, `${type}_ERROR`];
 
   return (param) => async (dispatch) => {
-    dispatch({ type, param });
+    dispatch({ type: PENDING, param });
     try {
       const payload = await promiseCreator(param);
       dispatch({ type: SUCCESS, payload });
