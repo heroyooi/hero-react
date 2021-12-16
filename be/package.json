@@ -1,0 +1,14 @@
+{
+  "name": "backend-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "scripts": {
+    "dev": "json-server --watch db.json -p 3095"
+  },
+  "author": "Heroyooi",
+  "license": "MIT"
+}
