@@ -3,27 +3,55 @@ import { BaseBox, PrimaryColor } from '@styles';
 
 export const CommentWrap = styled.div`
   ${BaseBox}
-  ul {
-    border-top: 1px solid #000;
-    li {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      width: 100%;
-      &:after {
-        content: '';
-        display: block;
-        clear: both;
+  .filter {
+    margin-bottom: 10px;
+    a {
+      &:first-of-type {
+        margin-left: 0;
       }
-      a:hover {
-        color: ${PrimaryColor};
+      margin-left: 10px;
+      &.on {
+        font-weight: bold;
       }
-      .desc {
-        float: left;
-      }
-      .author {
-        float: right;
-        font-size: 14px;
-        color: #aaa;
+    }
+  }
+  .comment-list {
+    position: relative;
+    min-height: 300px;
+    ul {
+      border-top: 1px solid #000;
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        display: table;
+        width: 100%;
+        &:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+        a:hover {
+          color: ${PrimaryColor};
+        }
+        .desc,
+        .righr-area {
+          display: table-cell;
+        }
+        .desc {
+          text-align: left;
+        }
+        .right-area {
+          text-align: right;
+          .author {
+            display: inline-block;
+            font-size: 14px;
+            color: #aaa;
+          }
+          .btns {
+            display: inline-block;
+            margin-left: 5px;
+          }
+        }
       }
     }
   }

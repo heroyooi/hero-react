@@ -24,58 +24,46 @@
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "desc": "첫번째 댓글을 달아보았습니다.",
       "author": "홍길동",
+      "userId": "hongildong",
       "date": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "desc": "두번째 댓글을 달아보았습니다.",
       "author": "홍길순",
+      "userId": "hongilsun",
       "date": 2
     },
     {
-      "id": "9c74408c-f4dd-427d-a07c-85f54dce3239",
-      "desc": "222",
+      "id": "83c107f6-5de9-4570-a508-5449364de690",
+      "desc": "ㅎㅎㅎ",
       "author": "성연욱",
-      "date": 3
+      "userId": "heroyooi",
+      "date": 1639967434626
     },
     {
-      "id": "dc29c74a-67d4-420f-b0e5-937142f03a0d",
-      "desc": "333",
+      "id": "d950fe1b-1cfc-496e-9ea5-7c88d6c892ca",
+      "desc": "ㅎㅎㅎㅎㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
       "author": "성연욱",
-      "date": 4
+      "userId": "heroyooi",
+      "date": 1639974200643
     },
     {
-      "id": "1e075404-6795-451b-9ad8-bfc1286270f1",
-      "desc": "444",
+      "id": "ab323004-a7de-4d5c-a7e3-22626087f998",
+      "desc": "ㅋㅋㅋ",
       "author": "성연욱",
-      "date": 5
+      "userId": "heroyooi",
+      "date": 1639973888059
     },
     {
-      "id": "8f992c19-c8f8-43b4-8594-ce279c006261",
-      "desc": "555",
+      "id": "f65d48ad-3632-485e-b142-d17e536d8f8b",
+      "desc": "1111ㅎㅇㅀㅇㅎㅇㅀㄹㅇㅎ",
       "author": "성연욱",
-      "date": 6
-    },
-    {
-      "id": "c79fe93f-cb1c-4d56-8def-4a945af88c87",
-      "desc": "12121212121212",
-      "author": "성연욱",
-      "date": 7
-    },
-    {
-      "id": "c9419b3f-0d4c-4614-99a8-66ccc9e16499",
-      "desc": "ㅋㅋㅋㅋㅋㅋ",
-      "author": "성연욱",
-      "date": 1639641245402
-    },
-    {
-      "id": "330fb51b-71cb-4ef2-afe6-d590134e63f5",
-      "desc": "ㅎㅎㅎㅎ",
-      "author": "성연욱",
-      "date": 1639641282802
+      "userId": "heroyooi",
+      "date": 1639974184123
     }
   ]
 }

@@ -11,9 +11,9 @@ export const getPosts = async () => {
   }
 };
 
-export const getPost = async (param) => {
+export const getPost = async (params) => {
   try {
-    const res = await axios.get(`/posts/${param}`);
+    const res = await axios.get(`/posts/${params}`);
     await delay(300);
     return res.data;
   } catch (err) {
