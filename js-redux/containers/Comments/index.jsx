@@ -45,7 +45,7 @@ const Comments = () => {
 
   const onEditComment = useCallback(
     (id) => () => {
-      dispatch(commentActions.editComment({ id, desc: editDesc, date: Date.now() }));
+      dispatch(commentActions.editComment({ id, desc: editDesc }));
       dispatch(commentActions.editModeComment(id));
     },
     [editDesc],

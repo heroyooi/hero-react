@@ -17,6 +17,6 @@ export const editComment = (params) => {
   return axios.patch(`/comments/${params.id}`, {
     id: params.id,
     desc: params.desc,
-    date: params.date,
+    // date: params.date,
   });
 };
