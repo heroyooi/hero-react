@@ -101,8 +101,10 @@ export default handleActions(
 
     [EDIT_MODE_COMMENT]: (state, action) => {
       return produce(state, (draft) => {
-        const index = draft.comments.data.findIndex((item) => item.id === action.payload);
-        draft.comments.data[index].editMode = !draft.comments.data[index].editMode;
+        const id = draft.comments.data.findIndex((item) => item.id === action.payload);
+        draft.comments.data.forEach((comment, index) => {
+          draft.comments.data[index].editMode = index === id;
+        });
       });
     },
 
