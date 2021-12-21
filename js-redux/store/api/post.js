@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { delay } from '@utils/asyncUtils';
+import utils from '@utils';
 
 export const getPosts = async () => {
   try {
     const res = await axios.get('/posts');
-    await delay(300);
+    await utils.delay(300);
     return res.data;
   } catch (err) {
     console.error(err.message);
@@ -14,7 +14,7 @@ export const getPosts = async () => {
 export const getPost = async (params) => {
   try {
     const res = await axios.get(`/posts/${params}`);
-    await delay(300);
+    await utils.delay(300);
     return res.data;
   } catch (err) {
     console.error(err.message);

@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { delay } from '@utils/asyncUtils';
+import utils from '@utils';
 
 export const getComments = async (params) => {
   try {
     const res = await axios.get('/comments', { params });
-    await delay(300);
+    await utils.delay(300);
     return res.data;
   } catch (err) {
     console.error(err.message);

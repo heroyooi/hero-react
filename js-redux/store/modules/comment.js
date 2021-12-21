@@ -1,7 +1,9 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
-import { createPromiseThunk, reducerUtils } from '@utils/asyncUtils';
+import utils from '@utils';
 import * as api from '@store/api/comment';
+
+const { createPromiseThunk, reducerUtils } = utils;
 
 const initialState = {
   comments: reducerUtils.initial(),

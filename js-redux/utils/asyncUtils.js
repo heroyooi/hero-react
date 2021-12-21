@@ -1,5 +1,7 @@
+const utils = {};
+
 // Promise에 기반한 Thunk를 만들어주는 함수
-export const createPromiseThunk = (type, promiseCreator) => {
+utils.createPromiseThunk = (type, promiseCreator) => {
   const [PENDING, SUCCESS, ERROR] = [`${type}_PENDING`, `${type}_SUCCESS`, `${type}_ERROR`];
 
   return (param) => async (dispatch) => {
@@ -15,12 +17,12 @@ export const createPromiseThunk = (type, promiseCreator) => {
 };
 
 // 비동기 통신 강제 지연을 위한 함수 - 개발 테스트용
-export const delay = (ms) => {
+utils.delay = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
 // 리듀서에서 사용할 수 있는 여러 유틸 함수
-export const reducerUtils = {
+utils.reducerUtils = {
   initial: (initialData = null) => ({
     loading: false,
     data: initialData,
@@ -42,3 +44,5 @@ export const reducerUtils = {
     error: error,
   }),
 };
+
+export default utils;
