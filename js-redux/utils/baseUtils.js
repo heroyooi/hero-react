@@ -47,4 +47,11 @@ const utils = {
   },
 };
 
+utils.hasProperty = function (obj, key) {
+  if (utils.isObject(obj) && obj !== null) {
+    return Object.prototype.hasOwnProperty.call(obj, key);
+  }
+  return false;
+};
+
 export default utils;

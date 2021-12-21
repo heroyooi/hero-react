@@ -28,11 +28,10 @@ const Comments = () => {
         userId: me.data.id,
         date: Date.now(),
       }),
-    );
-    // .then((res) => {
-    //   console.log(res);
-    //   setTextareaValue('');
-    // });
+    ).then((res) => {
+      console.log(res);
+      setTextareaValue('');
+    });
   }, [textareaValue]);
 
   const onToggleEditMode = useCallback(
@@ -54,7 +53,7 @@ const Comments = () => {
 
   const onDeleteComment = useCallback(
     (id) => () => {
-      dispatch(commentActions.deleteComment(id));
+      dispatch(commentActions.deleteCommentReq(id)(id));
     },
     [],
   );
@@ -101,7 +100,7 @@ const Comments = () => {
                     <span className="desc">- {comment.desc}</span>
                     <div className="right-area">
                       <span className="author">{comment.author}</span>
-                      {comment.userId === me.data.id && (
+                      {comment.userId === me.data?.id && (
                         <div className="btns">
                           <button onClick={onToggleEditMode(comment.id)}>수정</button>
                           <button onClick={onDeleteComment(comment.id)}>삭제</button>

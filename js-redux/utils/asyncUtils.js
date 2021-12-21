@@ -1,18 +1,39 @@
+import baseUtils from '@utils/baseUtils';
+
 const utils = {};
 
+const _log = (...params) => {
+  console.log('createPromiseThunk ::: ', ...params);
+};
+
 // Promise에 기반한 Thunk를 만들어주는 함수
-utils.createPromiseThunk = (type, promiseCreator) => {
+utils.createPromiseThunk = function (type, promiseCreator, reqInfo) {
   const [PENDING, SUCCESS, ERROR] = [`${type}_PENDING`, `${type}_SUCCESS`, `${type}_ERROR`];
 
-  return (param) => async (dispatch) => {
-    dispatch({ type: PENDING, param });
-    try {
-      const payload = await promiseCreator(param);
-      dispatch({ type: SUCCESS, payload });
-    } catch (e) {
-      console.error(e);
-      dispatch({ type: ERROR, payload: e, error: true });
-    }
+  return (...params) => {
+    return async (dispatch) => {
+      _log(PENDING);
+      dispatch({ type: PENDING, reqInfo });
+      try {
+        const response = await promiseCreator(...params);
+        let resultResponse;
+        if (
+          baseUtils.hasProperty(response, 'data') &&
+          baseUtils.hasProperty(response, 'headers') &&
+          baseUtils.hasProperty(response, 'status')
+        ) {
+          resultResponse = response.data;
+        } else {
+          resultResponse = response;
+        }
+        _log(SUCCESS, resultResponse);
+        dispatch({ type: SUCCESS, payload: resultResponse, reqInfo });
+        return resultResponse;
+      } catch (e) {
+        console.error(e);
+        dispatch({ type: ERROR, payload: e, error: true });
+      }
+    };
   };
 };
 

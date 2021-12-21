@@ -1,43 +1,22 @@
 import axios from 'axios';
 import utils from '@utils';
 
-export const getComments = async (params) => {
-  try {
-    const res = await axios.get('/comments', { params });
-    await utils.delay(300);
-    return res.data;
-  } catch (err) {
-    console.error(err.message);
-  }
+export const getComments = (params) => {
+  return axios.get('/comments', { params });
 };
 
-export const postComment = async (params) => {
-  try {
-    const res = await axios.post('/comments', params);
-    return res.data;
-  } catch (err) {
-    console.error(err.message);
-  }
+export const postComment = (params) => {
+  return axios.post('/comments', params);
 };
 
-export const deleteComment = async (param) => {
-  try {
-    await axios.delete(`/comments/${param}`);
-    return param;
-  } catch (err) {
-    console.error(err.message);
-  }
+export const deleteComment = (param) => {
+  return axios.delete(`/comments/${param}`);
 };
 
-export const editComment = async (params) => {
-  try {
-    await axios.patch(`/comments/${params.id}`, {
-      id: params.id,
-      desc: params.desc,
-      date: params.date,
-    });
-    return params;
-  } catch (err) {
-    console.error(err.message);
-  }
+export const editComment = (params) => {
+  return axios.patch(`/comments/${params.id}`, {
+    id: params.id,
+    desc: params.desc,
+    date: params.date,
+  });
 };

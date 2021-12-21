@@ -39,6 +39,8 @@ export const postComment = createPromiseThunk(POST_COMMENT, api.postComment);
 export const deleteComment = createPromiseThunk(DELETE_COMMENT, api.deleteComment);
 export const editComment = createPromiseThunk(EDIT_COMMENT, api.editComment);
 
+export const deleteCommentReq = (id) => createPromiseThunk(DELETE_COMMENT, api.deleteComment, { id });
+
 export const editModeComment = createAction(EDIT_MODE_COMMENT);
 
 export default handleActions(
@@ -86,8 +88,8 @@ export default handleActions(
     },
     [DELETE_COMMENT_SUCCESS]: (state, action) => {
       return produce(state, (draft) => {
-        // draft.comments.data = draft.comments.data.filter((item) => item.id !== action.payload);
-        const index = draft.comments.data.findIndex((item) => item.id === action.payload);
+        // draft.comments.data = draft.comments.data.filter((item) => item.id !== action.reqInfo.id);
+        const index = draft.comments.data.findIndex((item) => item.id === action.reqInfo.id);
         draft.comments.data.splice(index, 1);
       });
     },
@@ -111,7 +113,6 @@ export default handleActions(
     },
     [EDIT_COMMENT_SUCCESS]: (state, action) => {
       return produce(state, (draft) => {
-        console.log('action.payload ::: ', action.payload);
         const index = draft.comments.data.findIndex((item) => item.id === action.payload.id);
         draft.comments.data[index].desc = action.payload.desc;
         draft.comments.data[index].date = action.payload.date;

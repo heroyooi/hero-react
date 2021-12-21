@@ -93,6 +93,9 @@ npm i redux-thunk redux-actions
 npm i axios
 ```
 
+- store/api 에 여러가지 api 함수를 만들 때 확장성을 고려하여 Promise 가 리턴되도록 만듦 (예: 페이지에서 dispatch 이후 then 처리)
+- dispatch 가 undefined 을 리턴해서 구글링 해보았더니 리덕스 미들웨어 세팅 순서가 문제였다. applyMiddlewrae 함수에서 thunk를 가장 앞에 세팅해야 dispatch 가 promise 를 리턴할 수 있다.
+
 ## be
 
 - 비동기 통신 예제를 위해 간단하게 생성한 백엔드 서버
